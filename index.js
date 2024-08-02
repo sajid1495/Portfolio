@@ -25,3 +25,22 @@ function showText(){
 function hideText(){
     textEl.innerHTML = ""
 }
+
+
+const form = document.getElementById('myForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch('https://script.google.com/macros/s/AKfycbwc3niEvLO1Jua5jw7xdVGh1c_AgGk1lsQDU0NRw8NcW-WBny468T4JoHfgmKLa9NfC/exec', {
+      method: 'POST',
+      body: data
+    })
+    .then(response => response.text())
+    .then(result => {
+      alert('Form Submitted: ' + result);
+      form.reset();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  });

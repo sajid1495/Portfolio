@@ -657,6 +657,7 @@ section{
 
 .contact-form form .send{
     display: inline-block;
+    width: 90%;
     padding: 14px 28px;
     background: #0ef;
     border-radius: 40px;
