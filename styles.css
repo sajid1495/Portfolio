@@ -57,6 +57,9 @@ button{
 
 .navbar a:hover {
     color: #0ef;
+    background: transparent;
+    font-size: 30px;
+    text-shadow: 0 0 20px #0ef;
 }
 
 .home {
@@ -476,8 +479,8 @@ section{
 .project-list .projectbox{
     background-color: transparent;
     padding: 40px;
-    font-size: 13px;
-    font-weight: 13px;
+    font-size: 15px;
+    font-weight: 15px;
     border-right: 10px;
     border-radius: 20px;
     transition: background 0.5s, transform 0.5s;
