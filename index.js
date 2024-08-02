@@ -1,3 +1,13 @@
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault(); 
+    const targetId = this.getAttribute('href'); 
+    window.location.href = targetId; 
+    window.location.reload(); 
+  });
+});
+
+
 var typed = new Typed(".text", {
     strings: ["CS Undergrad Student of RUET", "Competitive Programmer", "Cross Platform App Developer(Flutter)", "Frontend Web Developer"],
     typeSpeed: 100,
