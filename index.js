@@ -9,7 +9,7 @@ document.querySelectorAll('nav a').forEach(link => {
 
 
 var typed = new Typed(".text", {
-    strings: ["CS Undergrad Student of RUET", "Competitive Programmer", "Cross Platform App Developer(Flutter)", "Frontend Web Developer"],
+    strings: ["CS Undergrad Student of RUET", "Competitive Programmer", "Flutter App Developer", "Frontend Web Developer"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
