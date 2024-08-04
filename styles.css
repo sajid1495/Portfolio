@@ -33,13 +33,18 @@ button{
 
 .logo {
     position: relative;
-    font-size: 25px;
+    font-size: 35px;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
     cursor: default;
     opacity: 0;
     animation: slideRight 1s ease forwards;
+}
+
+.logo:hover{
+    color: #0ef;
+    text-shadow: 0 0 10px pink;
 }
 
 .navbar a {
@@ -67,7 +72,7 @@ button{
     width: 100%;
     justify-content: space-between;
     height: 100vh;
-    background: url(background.jpg);
+    background: url(images/background.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -212,6 +217,41 @@ button{
 
 .sub-heading span {
     color: #0ef;
+}
+
+.education{
+    padding-top: 40px;
+}
+
+.education-box{
+    width: 70%;
+    margin: 50px auto;
+}
+
+.education-info{
+    display: flex;
+    background-color: transparent;
+    padding: 40px;
+    margin-top: 50px;
+    border-right: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7;
+}
+
+.education-info:hover{
+    transition: background 0.5s, transform 0.5s;
+    transform: translateY(-10px);
+}
+
+.education-info .edlogo{
+    width: 100px;
+    height: auto;
+    margin-left: 70px;
+}
+
+.education-info .edinfo{
+    padding-left: 80px; 
+    line-height: 40px;
 }
 
 #skillhead{
@@ -456,6 +496,96 @@ section{
     font-weight: 500;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
+}
+
+.tools{
+    margin-top: 40px;
+    width: 100%;
+}
+
+.tools .tools-icon{
+    margin-top: 30px;
+    width: 70%; 
+    display: flex;
+    margin: 30px auto;
+    justify-content: space-between;
+}
+
+.tools .tools-icon a img{
+    height: 250%;
+    width: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7;
+}
+
+.tools .tools-icon a img:hover{
+    height: 270%;
+    width: auto;
+    background-color: pink;
+    box-shadow: 0 0 20px #0ef;
+    transition: background 0.5s, transform 0.5s;
+    transform: translateY(-10px);
+}
+
+.github-info{
+    margin-top: 50px;
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.github-list-head{
+    font-size: 45px;
+    text-decoration: underline;
+    color: gold;
+    padding-bottom: 80px;
+}
+
+.github-list-head-chart{
+    font-size: 45px;
+    text-decoration: underline;
+    color: gold;
+}
+
+.github-info ul{
+    text-align: center;
+    width: 40%;
+    height: 530px;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7;
+    transition: background 0.5s, transform 0.5s;
+    transform: translateY(-10px);
+}
+
+.github-info ul li p{
+    font-size: 40px;
+    line-height: 60px;
+    color: lightskyblue;
+}
+
+.git-btm-text{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 90px;
+    text-align: justify;
+    color: lightgoldenrodyellow;
+}
+
+.chart-container {
+    width: 40%;
+    height: 530px;
+    margin-top: 40px;
+    margin-left: 20%;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7;
+    transition: background 0.5s, transform 0.5s;
+    transform: translateY(-10px);
 }
 
 .container{
