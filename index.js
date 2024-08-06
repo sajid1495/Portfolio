@@ -59,7 +59,7 @@ form.addEventListener('submit', function (e) {
 
 
 
-const GITHUB_TOKEN = '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';
+const GITHUB_TOKEN = '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';
 
 async function fetchGitHubData(username) {
   const headers = {
