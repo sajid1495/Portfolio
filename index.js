@@ -59,53 +59,63 @@ form.addEventListener('submit', function (e) {
 
 
 
-const GITHUB_TOKEN = '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';
+// async function fetchGitHubData(username) {
+//   const headers = {
+//     'Authorization': `token ${GITHUB_TOKEN}`,
+//     'Accept': 'application/vnd.github.v3+json'
+//   };
+
+//   const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`, { headers });
+//   const repos = await reposResponse.json();
+
+//   if (!reposResponse.ok) {
+//     throw new Error(`GitHub API error: ${reposResponse.statusText}`);
+//   }
+
+//   const languageData = {};
+//   let totalStars = 0;
+//   let totalContributions = 0;
+
+//   for (const repo of repos) {
+//     totalStars += repo.stargazers_count;
+
+//     const langResponse = await fetch(repo.languages_url, { headers });
+//     const languages = await langResponse.json();
+
+//     if (!langResponse.ok) {
+//       throw new Error(`GitHub API error: ${langResponse.statusText}`);
+//     }
+
+//     for (const [language, bytes] of Object.entries(languages)) {
+//       if (languageData[language]) {
+//         languageData[language] += bytes;
+//       } else {
+//         languageData[language] = bytes;
+//       }
+//     }
+
+//     const eventsResponse = await fetch(`https://api.github.com/repos/${username}/${repo.name}/events`, { headers });
+//     const events = await eventsResponse.json();
+
+//     if (eventsResponse.ok) {
+//       totalContributions += events.filter(event => event.type === 'PushEvent').length;
+//     }
+//   }
+
+//   return { languageData, totalStars, totalContributions, totalRepos: repos.length };
+// }
 
 async function fetchGitHubData(username) {
-  const headers = {
-    'Authorization': `token ${GITHUB_TOKEN}`,
-    'Accept': 'application/vnd.github.v3+json'
-  };
+  const response = await fetch(`/.netlify/functions/fetchGitHubData`);
+  const data = await response.json();
 
-  const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`, { headers });
-  const repos = await reposResponse.json();
-
-  if (!reposResponse.ok) {
-    throw new Error(`GitHub API error: ${reposResponse.statusText}`);
+  if (!response.ok) {
+    throw new Error(`Server error: ${data.error}`);
   }
 
-  const languageData = {};
-  let totalStars = 0;
-  let totalContributions = 0;
-
-  for (const repo of repos) {
-    totalStars += repo.stargazers_count;
-
-    const langResponse = await fetch(repo.languages_url, { headers });
-    const languages = await langResponse.json();
-
-    if (!langResponse.ok) {
-      throw new Error(`GitHub API error: ${langResponse.statusText}`);
-    }
-
-    for (const [language, bytes] of Object.entries(languages)) {
-      if (languageData[language]) {
-        languageData[language] += bytes;
-      } else {
-        languageData[language] = bytes;
-      }
-    }
-
-    const eventsResponse = await fetch(`https://api.github.com/repos/${username}/${repo.name}/events`, { headers });
-    const events = await eventsResponse.json();
-
-    if (eventsResponse.ok) {
-      totalContributions += events.filter(event => event.type === 'PushEvent').length;
-    }
-  }
-
-  return { languageData, totalStars, totalContributions, totalRepos: repos.length };
+  return data;
 }
+
 
 function calculateLanguagePercentages(languageData) {
   const totalBytes = Object.values(languageData).reduce((acc, bytes) => acc + bytes, 0);
