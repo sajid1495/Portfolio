@@ -5,6 +5,7 @@ This personal portfolio website showcases my introduction, projects, and skills.
 
 - **Responsive & Dynamic Design:** The website is fully responsive and dynamic with different CSS animation.
 - **Navigation Bar:** A navigation bar that refreshes the page when navigating to different sections.
+- **API Integration:** The website can fetch info from github using API.
 - **Contact Form:** A contact form that sends data to a Google Sheet.
 
 ## Some Images from Portfolio
