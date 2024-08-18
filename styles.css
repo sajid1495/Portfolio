@@ -542,6 +542,7 @@ section{
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 2rem;
 }
 
 .github-info  .github-box{
@@ -614,7 +615,7 @@ section{
     color: aliceblue;
     font-size: 20px;
     line-height: 1.4;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     width: 100%;
 }
 
@@ -675,6 +676,10 @@ section{
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
+}
+
+#project .box-btn{
+    margin: 0 auto;
 }
 
 .read{

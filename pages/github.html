@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="github.css">
+    <title>GitHub</title>
+    <link rel="icon" href="images/icon.png" type="image/icon type">
+</head>
+
+<body>
+    <section class="github-info" id="github">
+
+        <h1 class="sub-heading">GitHub <span>Info</span></h1>
+
+        <div class="github-box">
+            <a href="https://github.com/sajid1495/github-readme-stats">
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sajid1495&theme=dark&layout=compact"
+                    alt="Top Languages" />
+            </a>
+        </div>
+
+        <div class="github-api-links">
+            <div class="github-box">
+                <img src="https://github-readme-stats.vercel.app/api?username=sajid1495&show_icons=true&count_private=true&theme=nightowl"
+                    alt="sajid1495" />
+            </div>
+
+            <div class="github-box">
+                <a href="https://git.io/streak-stats"><img
+                        src="https://streak-stats.demolab.com?user=sajid1495&theme=nightowl&card_width=467"
+                        alt="GitHub Streak" /></a>
+            </div>
+        </div>
+
+        <div class="for-flex">
+            <ul>
+                <h1 class="github-list-head">Overview</h1>
+                <li>
+                    <p>Total Repositories: <span id="total-repos"></span></p>
+                </li>
+                <li>
+                    <p>Total Contributions: <span id="total-contributions"></span></p>
+                </li>
+                <li>
+                    <p>Total Stars Earned: <span id="total-stars"></span></p>
+                </li>
+            </ul>
+            <div class="chart-container">
+                <h1 class="github-list-head-chart">Chart</h1>
+                <canvas id="languageChart"></canvas>
+            </div>
+        </div>
+
+        <p class="git-btm-text">[Note: This information and chart are dynamic(Linked with GitHub via API).
+            If "Loading...", that means the API is loading data from Git Hub. Please be patient.]</p>
+    </section>
+
+    <script src="github.js"></script>
+</body>
+
+</html>
