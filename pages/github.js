@@ -58,7 +58,6 @@ async function updateGitHubInfo(username) {
     try {
         const { languageData, totalStars, totalContributions, totalRepos } = await fetchGitHubData(username);
 
-        document.getElementById('loadtext').innerText = ""
         document.getElementById('total-repos').innerText = totalRepos;
         document.getElementById('total-stars').innerText = totalStars;
         document.getElementById('total-contributions').innerText = totalContributions;

@@ -57,7 +57,7 @@ body{
     list-style: none;
     text-align: center;
     width: 40%;
-    height: 530px;
+    height: 600px;
     margin-top: 40px;
     padding: 10px;
     border-radius: 10px;
@@ -74,7 +74,7 @@ body{
 
 .chart-container {
     width: 40%;
-    height: 530px;
+    height: 600px;
     margin-top: 40px;
     margin-left: 20%;
     padding: 10px;
