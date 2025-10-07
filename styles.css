@@ -635,6 +635,10 @@ section{
     border-radius: 20px;
     transition: background 0.5s, transform 0.5s;
     box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* ensure button stays below text */
+    min-height: 360px; /* gives room for description + button on desktop */
 }
 
 .debughead{
@@ -667,7 +671,8 @@ section{
 .project-list div p{
     text-align: justify;
     width: 100%;
-    height: 35%;
+    height: auto; /* allow paragraphs to size naturally and prevent overlap */
+    margin-bottom: 18px;
 }
 
 .project-list div a{
@@ -920,4 +925,174 @@ section{
         transform: translateY(0px);
         opacity: 1;
     }
+}
+
+/* Responsive adjustments */
+
+/* Tablet and small laptop */
+@media (max-width: 992px) {
+    .header{
+        padding: 10px 6%;
+    }
+
+    .logo{
+        font-size: 30px;
+    }
+
+    .navbar{
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .navbar a{
+        font-size: 18px;
+        margin-left: 18px;
+    }
+
+    .home{
+        padding-top: 80px;
+        height: auto;
+        padding-bottom: 60px;
+    }
+
+    .home-content h1{ font-size: 44px; }
+    .home-content h3{ font-size: 26px; }
+    .home-content p{ font-size: 18px; }
+
+    .about{ grid-template-columns: 1fr 1fr; gap: 1rem; padding: 30px; }
+    .about-img img{ max-width: 420px; margin: 20px auto; }
+    .about-txt h2{ font-size: 44px; }
+    .about-txt p{ font-size: 18px; margin-right: 0; }
+
+    .education-box{ width: 90%; padding: 10px; }
+    .education-info{ padding: 30px; margin-top: 30px; }
+    .education-info .edlogo{ margin-left: 30px; width: 80px; }
+    .education-info .edinfo{ padding-left: 30px; }
+
+    .container1{ width: 100%; height: auto; padding: 40px 30px; margin-left: 0; }
+
+    .radial-bars .radial-bar{ width: 45%; }
+
+    .tools .tools-icon{ width: 95%; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .tools .tools-icon a img{ height: 48px; }
+
+    .github-info .github-api-links{ flex-direction: row; flex-wrap: wrap; gap: 16px; justify-content: center; }
+    .chart-container{ width: 60%; margin-left: 0; }
+
+    .project-list .projectbox{ padding: 24px; }
+
+    .contact{ grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 20px; }
+    .contact-text h2{ font-size: 56px; }
+    .contact-form textarea{ height: 200px; }
+}
+
+/* Phone and small devices */
+@media (max-width: 600px) {
+    /* Header */
+    .header{ padding: 8px 4%; }
+    .logo{ font-size: 26px; }
+
+    /* Mobile: show hamburger, hide navbar until toggled */
+    .nav-toggle{
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        margin-left: 12px;
+        padding: 6px;
+    }
+
+    .nav-toggle .bar{
+        width: 24px;
+        height: 3px;
+        background: #fff;
+        display: block;
+        border-radius: 2px;
+    }
+
+    .navbar{
+        display: none; /* hidden by default on small screens */
+        width: 100%;
+        background: rgba(5,17,41,0.95);
+        position: absolute;
+        left: 0;
+        top: 64px;
+        padding: 12px 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    .navbar.show{
+        display: flex;
+    }
+
+    .navbar a{ font-size: 16px; margin-left: 0; padding: 10px 12px; display: block; width: 90%; text-align: center; border-radius: 8px; }
+
+    /* Home */
+    .home{ flex-direction: column; align-items: center; text-align: center; padding: 120px 4% 40px; height: auto; }
+    .home-content{ max-width: 100%; }
+    .home-content h1{ font-size: 34px; }
+    .home-content h3{ font-size: 20px; }
+    .home-content p{ font-size: 16px; }
+    .home-sci a{ margin: 18px 10px 18px 0; }
+
+    /* About */
+    .about{ grid-template-columns: 1fr; padding: 20px; }
+    .about-img img{ max-width: 320px; margin: 0 auto; }
+    .about-txt{ padding: 10px 6px; }
+    .about-txt h2{ font-size: 34px; text-align: center; }
+    .about-txt p{ font-size: 16px; }
+
+    /* Education */
+    .education-box{ width: 100%; margin: 20px 0; }
+    .education-info{ flex-direction: row; padding: 18px; gap: 12px; }
+    .education-info .edlogo{ width: 60px; margin-left: 10px; }
+    .education-info .edinfo{ padding-left: 16px; line-height: 26px; }
+
+    /* Skills */
+    .container1{ width: 100%; padding: 30px 16px; margin-left: 0; height: auto; }
+    .radial-bars .radial-bar{ width: 100%; display: flex; justify-content: center; margin-bottom: 20px; }
+    .radial-bars .radial-bar svg{ width: 100px; height: 100px; }
+
+    /* Tools icons */
+    .tools .tools-icon{ width: 100%; gap: 10px; }
+    .tools .tools-icon a img{ height: 36px; padding: 6px; }
+
+    /* Github / charts */
+    .github-info{ width: 95%; padding: 10px; }
+    .github-info .github-api-links{ flex-direction: column; align-items: center; }
+    .chart-container{ width: 100%; margin: 16px 0; }
+
+    /* Projects */
+    .project-list{ grid-template-columns: 1fr; padding: 0 12px; }
+    .project-list .projectbox{ padding: 18px; }
+
+    /* Prevent action button overlapping text on small screens */
+    .project-list .projectbox{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 220px; /* allow space for description + button */
+    }
+
+    .project-list div p{
+        height: auto; /* remove fixed percentage height that caused overlap */
+        margin-bottom: 12px;
+    }
+
+    /* Contact: stack columns */
+    .contact{ grid-template-columns: 1fr; padding: 10px 12px; }
+    .contact-text{ order: 1; }
+    .contact-text h2{ font-size: 36px; text-align: center; }
+    .contact-form{ order: 2; }
+    .contact-form form input, .contact-form form textarea{ width: 100%; }
+
+    /* Footer/top */
+    .last-text{ padding: 18px 8px; font-size: 14px; }
+    .top{ right: 1rem; bottom: 1rem; }
 }

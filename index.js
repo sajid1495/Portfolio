@@ -55,3 +55,25 @@ form.addEventListener('submit', function (e) {
     });
 });
 
+
+// Mobile hamburger toggle
+const navToggle = document.querySelector('.nav-toggle');
+const navbar = document.querySelector('.navbar');
+if (navToggle && navbar) {
+  navToggle.addEventListener('click', function () {
+    const isOpen = navbar.classList.toggle('show');
+    // update aria for accessibility
+    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Close nav when a link is clicked (mobile)
+  navbar.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function () {
+      if (navbar.classList.contains('show')) {
+        navbar.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+}
+
